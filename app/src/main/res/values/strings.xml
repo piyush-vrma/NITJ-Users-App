@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">NITJ</string>
+    <string name="l_bold" tools:ignore="ReferenceType">@font/lato_bold</string>
+    <string name="l_black" tools:ignore="ReferenceType">@font/lato_black</string>
+    <string name="l_black_italic" tools:ignore="ReferenceType">@font/lato_black_italic</string>
+    <string name="l_bold_italic" tools:ignore="ReferenceType">@font/lato_bold_italic</string>
+    <string name="l_italic" tools:ignore="ReferenceType">@font/lato_italic</string>
+    <string name="l_light" tools:ignore="ReferenceType">@font/lato_light</string>
+    <string name="l_light_italic" tools:ignore="ReferenceType">@font/lato_light_italic</string>
+    <string name="l_regular" tools:ignore="ReferenceType">@font/lato_regular</string>
+    <string name="c_bold" tools:ignore="ReferenceType">@font/corinthia_bold</string>
+    <string name="c_regular" tools:ignore="ReferenceType">@font/corinthia_regular</string>
+    <string name="start">Start</string>
+    <string name="close">Close</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="no_department_data_found">No Department Data Found</string>
+    <string name="departments">DEPARTMENTS</string>
+    <string name="nit_jalandhar">NIT JALANDHAR</string>
+</resources>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/home_dest">
+
+    <fragment
+        android:id="@+id/home_dest"
+        android:name="com.nitj.nitj.screens.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/notice_dest"
+        android:name="com.nitj.nitj.screens.fragments.NoticeFragment"
+        android:label="Notice"
+        tools:layout="@layout/fragment_notice" />
+
+    <fragment
+        android:id="@+id/faculty_dest"
+        android:name="com.nitj.nitj.screens.fragments.FacultyFragment"
+        android:label="Faculty : {department}"
+        tools:layout="@layout/fragment_faculty">
+        <argument
+            android:name="department"
+            android:defaultValue="Department"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_faculty_dest_to_fac_full_detail_dest"
+            app:destination="@id/fac_full_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fac_full_detail_dest"
+        android:name="com.nitj.nitj.screens.fragments.FacFullDetailFragment"
+        android:label="Faculty : {department}"
+        tools:layout="@layout/fragment_fac_full_detail">
+        <argument
+            android:name="facName"
+            android:defaultValue="Tony"
+            app:argType="string" />
+        <argument
+            android:name="department"
+            android:defaultValue="ECE"
+            app:argType="string" />
+        <argument
+            android:name="designation"
+            android:defaultValue="HOD"
+            app:argType="string" />
+        <argument
+            android:name="qualification1"
+            android:defaultValue="HOD"
+            app:argType="string" />
+        <argument
+            android:name="qualification2"
+            android:defaultValue="HOD"
+            app:argType="string" />
+        <argument
+            android:name="qualification3"
+            android:defaultValue="HOD"
+            app:argType="string" />
+        <argument
+            android:name="email"
+            android:defaultValue="tony@gmail.com"
+            app:argType="string" />
+        <argument
+            android:name="researchInterest"
+            android:defaultValue="HOD"
+            app:argType="string" />
+        <argument
+            android:name="fax"
+            android:defaultValue="HOD"
+            app:argType="string" />
+        <argument
+            android:name="facImage"
+            android:defaultValue="HOD"
+            app:argType="string" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/gallery_dest"
+        android:name="com.nitj.nitj.screens.fragments.GalleryFragment"
+        android:label="Gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/about_dest"
+        android:name="com.nitj.nitj.screens.fragments.AboutFragment"
+        android:label="About"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/ebook_dest"
+        android:name="com.nitj.nitj.screens.fragments.EbookFragment"
+        android:label="Ebooks"
+        tools:layout="@layout/fragment_ebook" />
+
+    <fragment
+        android:id="@+id/department_dest"
+        android:name="com.nitj.nitj.screens.fragments.DepartmentsFragment"
+        android:label="Departments"
+        tools:layout="@layout/fragment_departments">
+        <action
+            android:id="@+id/action_department_dest_to_faculty_dest"
+            app:destination="@id/faculty_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+</navigation>

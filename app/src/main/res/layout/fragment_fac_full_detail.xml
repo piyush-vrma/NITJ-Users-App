@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/nitJ_primary"
+    android:orientation="vertical"
+    tools:context=".screens.fragments.FacFullDetailFragment">
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal"
+        android:weightSum="6">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/facImage"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/teacher_logo"
+                app:civ_border_color="@color/nitJ_cardViewColor"
+                app:civ_border_width="1dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="15dp"
+            android:layout_weight="4"
+            android:gravity="start"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/facName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_bold"
+                android:text="PIYUSH VERMA"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/facDesignation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/facImage"
+                android:fontFamily="@font/lato_bold_italic"
+                android:text="Associate Professor &amp; Head"
+                android:textColor="@color/teal_200"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/facEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/facImage"
+                android:fontFamily="@font/lato_bold"
+                android:text="piyush09990@gmail.com"
+                android:textColor="@color/purple_200"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout1"
+        android:paddingTop="10dp"
+        android:paddingHorizontal="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/circular_border_layout_design">
+
+        <ScrollView
+            android:scrollbars="none"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/circular_border_layout_design">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circular_border_layout_design"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/departmentHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/ic_department"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="Department:"
+                        android:textColor="@color/nitJ_primaryDark"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/departmentName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Electronics &amp; Communication Enginnering"
+                        android:textColor="@color/nitJ_cardViewColor"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/eduHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/ebook"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="Qualification:"
+                        android:textColor="@color/nitJ_primaryDark"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/edu1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Electronics &amp; Communication Enginnering\nElectronics &amp; Communication Enginnering\nElectronics &amp; Communication Enginnering"
+                        android:textColor="@color/nitJ_cardViewColor"
+                        android:textSize="15sp" />
+
+
+                    <TextView
+                        android:id="@+id/edu2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Electronics &amp; Communication EnginneringElectronics &amp; Communication Enginnering\nElectronics &amp; Communication Enginnering"
+                        android:textColor="@color/nitJ_cardViewColor"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/edu3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Electronics &amp; Communication EnginneringElectronics &amp; Communication Enginnering"
+
+                        android:textColor="@color/nitJ_cardViewColor"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/researchHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/ic_research"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="Research Interests:"
+                        android:textColor="@color/nitJ_primaryDark"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/researchContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text="Wireless Communication Systems\nWireless Communication Systems Mobile Communication and Fading\nSignal Processing Plant Signalling &amp; Renewable Energy"
+                        android:textColor="@color/nitJ_cardViewColor"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/faxHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:drawableLeft="@drawable/outline_fax"
+                        android:drawablePadding="5dp"
+                        android:fontFamily="@font/lato_bold"
+                        android:gravity="center"
+                        android:text="Fax:"
+                        android:textColor="@color/nitJ_primaryDark"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/fax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/lato_bold"
+                        android:text=""
+                        android:textColor="@color/nitJ_cardViewColor"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </LinearLayout>
+
+
+</RelativeLayout>
