@@ -1,15 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:orientation="vertical"
     tools:context=".screens.fragments.GalleryFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.cardview.widget.CardView
+        android:id="@+id/noGalleryData"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Gallery" />
+        android:layout_below="@+id/facultyDepartmentHeader"
+        android:layout_margin="40dp"
+        android:backgroundTint="@color/tileBackgroundLight"
+        android:visibility="gone"
+        app:cardElevation="10dp">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/noGalleryDataText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="No Gallery Data"
+            android:textColor="@color/textColor"
+            android:textSize="40sp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/GalleryEventRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#AB97D2"/>
+
+</LinearLayout>
