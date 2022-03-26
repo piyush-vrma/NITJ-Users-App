@@ -21,7 +21,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center|top"
             android:layout_margin="5dp"
-
             android:ellipsize="end"
             android:fontFamily="@font/lato_regular"
             android:gravity="center|top"

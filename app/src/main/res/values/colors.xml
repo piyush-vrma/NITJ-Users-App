@@ -24,4 +24,5 @@
     <color name="tileBackgroundLight">#F3E5F5</color>
     <color name="red">#b71c1c</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="noticeTile">#EEEDE4</color>
 </resources>

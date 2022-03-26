@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:id="@+id/fileCardTile"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/fileTypeIcon"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:src="@drawable/pdf" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/text_margin"
+            android:layout_marginEnd="30dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fileTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:text="Data Structure Using C++"
+                android:textColor="@color/nitJ_primary" />
+
+            <TextView
+                android:id="@+id/fileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:textSize="13dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:text="FileName.pdf"
+                android:textColor="@color/nitJ_cardViewColor" />
+
+            <TextView
+                android:id="@+id/uploadDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:textSize="10dp"
+                android:fontFamily="@font/lato_regular"
+                android:maxLines="2"
+                android:text="Uploaded Date : 3/3/2022"
+                android:textColor="@color/nitJ_cardViewColor" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/downloadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-30dp"
+            android:src="@drawable/download" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

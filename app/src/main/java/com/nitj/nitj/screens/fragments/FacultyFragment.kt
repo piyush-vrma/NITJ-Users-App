@@ -54,7 +54,6 @@ class FacultyFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_faculty, container, false)
         (activity as MainActivity).setDrawerEnabled(enabled = false)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-
         return view
     }
 

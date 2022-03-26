@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".screens.fragments.PdfViewFragment">
+
+    <TextView
+        android:id="@+id/pdfName"
+        android:layout_width="match_parent"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@color/nitJ_primary"
+        android:fontFamily="@font/lato_regular"
+        android:gravity="start|center"
+        android:paddingStart="25dp"
+        android:text="PDF :"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        tools:ignore="RtlSymmetry" />
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

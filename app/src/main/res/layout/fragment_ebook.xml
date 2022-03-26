@@ -1,15 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:orientation="vertical"
     tools:context=".screens.fragments.EbookFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ebook Frag" />
+        android:layout_height="200dp"
+        android:background="@drawable/ebook_rounded_layout"
+        android:elevation="5dp"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/nitjEbookTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_margin="10dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center|top"
+            android:maxLines="1"
+            android:text="NITJ EBooks"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <Spinner
+            android:id="@+id/selectDepartmentForEbookSpinner"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/custom_spinner"
+            android:gravity="center"
+            android:padding="15dp"
+            android:spinnerMode="dropdown" />
+
+        <SearchView
+            android:id="@+id/searchViewEbook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="22dp"
+            android:background="@drawable/search_view_background"
+            android:baselineAligned="false"
+            android:queryHint="Search EBooks"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/belowTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_margin="20dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/lato_regular"
+            android:gravity="center|top"
+            android:maxLines="2"
+            android:text="Please Select the department to see the available EBooks"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/noEbookData"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="40dp"
+            android:backgroundTint="@color/tileBackgroundLight"
+            android:visibility="gone"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="2dp">
+
+            <TextView
+                android:id="@+id/noDepartmentDataText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:padding="30dp"
+                android:text="No Ebook found"
+                android:textColor="@color/textColor"
+                android:textSize="40sp" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/bookRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+</LinearLayout>

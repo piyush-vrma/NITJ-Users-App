@@ -31,9 +31,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/GalleryEventRecycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="match_parent" />
 
 </LinearLayout>
 
-<!--    android:background="#AB97D2"-->
+    <!--    android:background="#AB97D2"-->

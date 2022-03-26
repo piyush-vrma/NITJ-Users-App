@@ -99,7 +99,15 @@
         android:id="@+id/ebook_dest"
         android:name="com.nitj.nitj.screens.fragments.EbookFragment"
         android:label="Ebooks"
-        tools:layout="@layout/fragment_ebook" />
+        tools:layout="@layout/fragment_ebook" >
+        <action
+            android:id="@+id/action_ebook_dest_to_pdfView_dest"
+            app:destination="@id/pdfView_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/department_dest"
@@ -115,4 +123,19 @@
             app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
+
+    <fragment
+        android:id="@+id/pdfView_dest"
+        android:name="com.nitj.nitj.screens.fragments.PdfViewFragment"
+        android:label="PDF : {fileName}"
+        tools:layout="@layout/fragment_pdf_view">
+        <argument
+            android:name="fileName"
+            android:defaultValue="PiyPdf"
+            app:argType="string" />
+        <argument
+            android:name="fileUrl"
+            android:defaultValue="piy.com"
+            app:argType="string" />
+    </fragment>
 </navigation>

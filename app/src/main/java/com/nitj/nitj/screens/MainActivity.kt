@@ -1,11 +1,12 @@
 package com.nitj.nitj.screens
 
-import android.R.id.toggle
+import android.Manifest
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavController
@@ -13,7 +14,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.*
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.messaging.FirebaseMessaging
 import com.nitj.nitj.R
+import com.nitj.nitj.firebaseNotifications.Constants.Companion.TOPIC
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,12 +28,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     private lateinit var navigationView: NavigationView
-
+    val REQUEST_CODE = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        ActivityCompat.requestPermissions(
+            this, arrayOf(
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+            ), REQUEST_CODE
+        )
         findViews()
+
+        FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
+
     }
 
     private fun findViews() {
@@ -38,9 +51,11 @@ class MainActivity : AppCompatActivity() {
 
         drawerLayout = findViewById(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigation_view)
-       // navigationView.itemIconTintList = null;
+        // navigationView.itemIconTintList = null;
 
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment? ?: return
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment?
+                ?: return
         navController = navHostFragment.navController
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -93,11 +108,14 @@ class MainActivity : AppCompatActivity() {
             super.onBackPressed()
         }
     }
+
     fun closeDrawer() {
         drawerLayout.closeDrawers()
     }
+
     fun setDrawerEnabled(enabled: Boolean) {
-        val lockMode = if (enabled) DrawerLayout.LOCK_MODE_UNLOCKED else DrawerLayout.LOCK_MODE_LOCKED_CLOSED
+        val lockMode =
+            if (enabled) DrawerLayout.LOCK_MODE_UNLOCKED else DrawerLayout.LOCK_MODE_LOCKED_CLOSED
         drawerLayout.setDrawerLockMode(lockMode)
     }
 }
