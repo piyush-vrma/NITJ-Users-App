@@ -299,7 +299,7 @@ class EbookFragment : Fragment() {
                                 /////////////////////
                                 val ebookDepartment = data.key.toString()
                                 val arrayList: ArrayList<Ebook> = ArrayList<Ebook>()
-                                for (ebook in data.children) {
+                                for (ebook in data.children.reversed()) {
                                     val ebookData: Ebook? = ebook.getValue(Ebook::class.java)
                                     arrayList.add(ebookData!!)
                                 }

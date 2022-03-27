@@ -83,7 +83,7 @@ class GalleryFragment : Fragment() {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         if (dataSnapshot.exists()) {
                             galleryEventList.clear()
-                            for (events in dataSnapshot.children) {
+                            for (events in dataSnapshot.children.reversed()) {
                                 val galleryEventName = events.key.toString()
                                 val galleryDataArray = ArrayList<GalleryData>()
                                 for (data in events.children) {

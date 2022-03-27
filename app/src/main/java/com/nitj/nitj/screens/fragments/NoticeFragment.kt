@@ -88,7 +88,7 @@ class NoticeFragment : Fragment() {
                     override fun onDataChange(dataSnapshot: DataSnapshot) {
                         if (dataSnapshot.exists()) {
                             noticeList.clear()
-                            for (data in dataSnapshot.children) {
+                            for (data in dataSnapshot.children.reversed()) {
                                 val noticeData = data.getValue(NoticeData::class.java)
                                 noticeList.add(noticeData!!)
                             }
