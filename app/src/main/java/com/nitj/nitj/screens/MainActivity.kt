@@ -16,7 +16,7 @@ import androidx.navigation.ui.*
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nitj.nitj.R
-import com.nitj.nitj.firebaseNotifications.Constants.Companion.TOPIC
+import com.nitj.nitj.firebaseNotificationJava.Constant.TOPIC
 
 
 class MainActivity : AppCompatActivity() {
