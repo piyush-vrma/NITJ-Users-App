@@ -17,6 +17,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DataSnapshot
@@ -164,7 +165,11 @@ class NoticeFragment : Fragment() {
         noticeRecycler.layoutManager = layoutManager
         noticeRecycler.adapter = noticeAdapter
         progressBar.visibility = View.GONE
-        searchView.visibility = View.VISIBLE
+        if(noData.isVisible){
+            searchView.visibility = View.GONE
+        }else{
+            searchView.visibility = View.VISIBLE
+        }
     }
 
     private fun getSearchView(view: View) {
