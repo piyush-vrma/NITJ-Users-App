@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_register_navigation"
+    app:startDestination="@id/login_dest">
+
+    <fragment
+        android:id="@+id/register_dest"
+        android:name="com.nitj.nitj.screens.loginRegisterScreens.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_register_dest_to_login_dest2"
+            app:destination="@id/login_dest"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/register_dest"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_dest"
+        android:name="com.nitj.nitj.screens.loginRegisterScreens.LoginFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_dest_to_register_dest"
+            app:destination="@id/register_dest"
+            app:popUpTo="@id/login_dest"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_login_dest_to_forgot_pass_dest"
+            app:destination="@id/forgot_pass_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgot_pass_dest"
+        android:name="com.nitj.nitj.screens.loginRegisterScreens.ForgetPasswordFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_forget_password" />
+
+</navigation>
