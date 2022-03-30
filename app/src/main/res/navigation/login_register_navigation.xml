@@ -35,6 +35,12 @@
         android:id="@+id/forgot_pass_dest"
         android:name="com.nitj.nitj.screens.loginRegisterScreens.ForgetPasswordFragment"
         android:label="Register"
-        tools:layout="@layout/fragment_forget_password" />
+        tools:layout="@layout/fragment_forget_password" >
+        <action
+            android:id="@+id/action_forgot_pass_dest_to_login_dest"
+            app:destination="@id/login_dest"
+            app:popUpTo="@id/login_dest"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>

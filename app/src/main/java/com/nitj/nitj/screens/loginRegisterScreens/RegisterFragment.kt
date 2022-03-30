@@ -3,6 +3,7 @@ package com.nitj.nitj.screens.loginRegisterScreens
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
@@ -246,6 +247,7 @@ class RegisterFragment : Fragment() {
     private fun findViews(view: View) {
         nameInputField = view.findViewById(R.id.regName)
         openLog = view.findViewById(R.id.openLog)
+        openLog.paintFlags = openLog.paintFlags or Paint.UNDERLINE_TEXT_FLAG
         progressBar = view.findViewById(R.id.progressBar)
         llContent = view.findViewById(R.id.llContent)
         name = nameInputField.text.toString()

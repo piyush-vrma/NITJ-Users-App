@@ -3,6 +3,7 @@ package com.nitj.nitj.screens.loginRegisterScreens
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
@@ -31,6 +32,7 @@ class LoginFragment : Fragment() {
     private lateinit var emailInputField: TextInputEditText
     private lateinit var passInputField: TextInputEditText
     private lateinit var openReg: TextView
+    private lateinit var openForgetPass: TextView
     private lateinit var loginButton: MaterialButton
     private lateinit var progressBar: ProgressBar
     private lateinit var llContent: RelativeLayout
@@ -60,7 +62,16 @@ class LoginFragment : Fragment() {
         openReg.setOnClickListener {
             openRegister()
         }
+
+        openForgetPass.setOnClickListener {
+            openForgetPassword()
+        }
         return view
+    }
+
+    private fun openForgetPassword() {
+        val action = LoginFragmentDirections.actionLoginDestToForgotPassDest()
+        findNavController().navigate(action)
     }
 
     override fun onStart() {
@@ -119,6 +130,8 @@ class LoginFragment : Fragment() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success")
+                            Toast.makeText(context, "Login Success", Toast.LENGTH_SHORT)
+                                .show()
                             openMain()
                             progressBar.visibility = View.GONE
                         } else {
@@ -176,6 +189,7 @@ class LoginFragment : Fragment() {
 
     private fun findViews(view: View) {
         openReg = view.findViewById(R.id.openReg)
+        openForgetPass = view.findViewById(R.id.openForgetPass)
         progressBar = view.findViewById(R.id.progressBar)
         llContent = view.findViewById(R.id.llContent)
         emailInputField = view.findViewById(R.id.logEmail)
@@ -185,6 +199,9 @@ class LoginFragment : Fragment() {
         loginButton = view.findViewById(R.id.loginButton)
         firebaseAuth = FirebaseAuth.getInstance()
         reference = FirebaseDatabase.getInstance().reference
+
+        openReg.paintFlags = openReg.paintFlags or Paint.UNDERLINE_TEXT_FLAG
+        openForgetPass.paintFlags = openForgetPass.paintFlags or Paint.UNDERLINE_TEXT_FLAG
     }
 
 }
