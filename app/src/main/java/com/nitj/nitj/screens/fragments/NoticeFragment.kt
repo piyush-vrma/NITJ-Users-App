@@ -55,11 +55,11 @@ class NoticeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_notice, container, false)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         findView(view)
-        getSearchView(view)
         return view
     }
 
     override fun onResume() {
+        view?.let { findView(it) }
         super.onResume()
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
     }
@@ -165,11 +165,12 @@ class NoticeFragment : Fragment() {
         noticeRecycler.layoutManager = layoutManager
         noticeRecycler.adapter = noticeAdapter
         progressBar.visibility = View.GONE
-        if(noData.isVisible){
+        if (noData.isVisible) {
             searchView.visibility = View.GONE
-        }else{
+        } else {
             searchView.visibility = View.VISIBLE
         }
+        view?.let { getSearchView(it) }
     }
 
     private fun getSearchView(view: View) {

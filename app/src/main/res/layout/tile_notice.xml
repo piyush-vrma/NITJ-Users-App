@@ -34,9 +34,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginStart="10dp"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -65,12 +65,13 @@
 
             </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="end|center"
             android:layout_marginRight="5dp"
             android:layout_marginBottom="10dp"
+            android:gravity="end|center"
             android:orientation="horizontal">
 
             <TextView

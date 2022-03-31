@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable-v24/custom_add_category_icon.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/background_round_padded.xml" value="0.18" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/bg_overlay.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/circular_border_layout_design.xml" value="0.1615" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/custom_add_category_icon.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/custom_notice_title_icon.xml" value="0.1" />
@@ -31,23 +32,26 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/activity_login_register.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/drawer_header.xml" value="0.1" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_about.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_about.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_departments.xml" value="0.2111111111111111" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_ebook.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_fac_full_detail.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_faculty.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_forget_password.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_gallery.xml" value="0.20260416666666667" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_home.xml" value="0.1308876811594203" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_notice.xml" value="0.22" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_pdf_view.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_register.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_web_view.xml" value="0.20260416666666667" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/image_slider_layout_item.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_allbranch.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_ebook.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_faculty.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_gallery_data.xml" value="0.17572463768115942" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_gallery_event.xml" value="0.33" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_home_recycler.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/tile_notice.xml" value="0.33" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/menu/nav_drawer_menu.xml" value="0.1" />
         <entry key="..\:/Users/User/AppData/Local/Android/Sdk/platforms/android-31/data/res/layout/simple_spinner_dropdown_item.xml" value="0.25" />

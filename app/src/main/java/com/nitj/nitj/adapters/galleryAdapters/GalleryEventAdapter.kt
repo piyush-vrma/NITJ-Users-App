@@ -2,18 +2,21 @@ package com.nitj.nitj.adapters.galleryAdapters
 
 import android.content.Context
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
+import android.view.View.OnTouchListener
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.view.MotionEventCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.nitj.nitj.R
 import com.nitj.nitj.models.gallery.GalleryEvent
 
 class GalleryEventAdapter(
     private val context: Context,
-    private val listItem: ArrayList<GalleryEvent>
+    private val listItem: ArrayList<GalleryEvent>,
+    private val galleryEventRecycler: RecyclerView
 ) : RecyclerView.Adapter<GalleryEventAdapter.GalleryEventViewHolder>() {
 
     private lateinit var layoutManager: RecyclerView.LayoutManager
@@ -32,6 +35,7 @@ class GalleryEventAdapter(
         recyclerAdapter = GalleryDataAdapter(context, galleryEvent.arrayList)
         holder.galleryDataRecycler.layoutManager = layoutManager
         holder.galleryDataRecycler.adapter = recyclerAdapter
+
     }
 
     override fun getItemCount(): Int {

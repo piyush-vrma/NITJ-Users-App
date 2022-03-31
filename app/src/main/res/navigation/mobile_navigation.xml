@@ -8,8 +8,16 @@
     <fragment
         android:id="@+id/home_dest"
         android:name="com.nitj.nitj.screens.fragments.HomeFragment"
-        android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        android:label="NITJ"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_home_dest_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/notice_dest"
@@ -99,7 +107,7 @@
         android:id="@+id/ebook_dest"
         android:name="com.nitj.nitj.screens.fragments.EbookFragment"
         android:label="Ebooks"
-        tools:layout="@layout/fragment_ebook" >
+        tools:layout="@layout/fragment_ebook">
         <action
             android:id="@+id/action_ebook_dest_to_pdfView_dest"
             app:destination="@id/pdfView_dest"
@@ -138,4 +146,19 @@
             android:defaultValue="piy.com"
             app:argType="string" />
     </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:name="com.nitj.nitj.screens.fragments.WebViewFragment"
+        android:label="WebView : {title}"
+        tools:layout="@layout/fragment_web_view">
+        <argument
+            android:name="title"
+            android:defaultValue="NITJ WebView"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            android:defaultValue="https://www.nitj.ac.in/"
+            app:argType="string" />
+    </fragment>
+
 </navigation>

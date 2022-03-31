@@ -62,7 +62,7 @@ class GalleryFragment : Fragment() {
 
     private fun setAdapter() {
         layoutManager = LinearLayoutManager(activity)
-        recyclerAdapter = GalleryEventAdapter(requireContext(), galleryEventList)
+        recyclerAdapter = GalleryEventAdapter(requireContext(), galleryEventList,galleryEventRecycler)
         galleryEventRecycler.layoutManager = layoutManager
         galleryEventRecycler.adapter = recyclerAdapter
     }
