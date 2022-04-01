@@ -387,6 +387,29 @@
 
             </RelativeLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/lato_regular"
+                android:textColor="@color/nitJ_cardViewColor"
+                android:gravity="center"
+                android:text="Created with 💝 by Piyush Mayank Praan"
+                android:textSize="10sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/lato_regular"
+                android:gravity="center"
+                android:text="© Copyright 2022-2030, All Rights Reserved"
+                android:textColor="@color/nitJ_cardViewColor"
+                android:textSize="10sp" />
+
         </LinearLayout>
 
         <ProgressBar
@@ -395,6 +418,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:visibility="gone" />
+
     </RelativeLayout>
 
 

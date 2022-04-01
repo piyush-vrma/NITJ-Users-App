@@ -2,7 +2,9 @@ package com.nitj.nitj.screens.loginRegisterScreens
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Paint
 import android.os.Bundle
 import android.provider.Settings
@@ -40,6 +42,7 @@ class LoginFragment : Fragment() {
     private lateinit var pass: String
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var reference: DatabaseReference
+    private var sharedPreferences: SharedPreferences? = null
     private val TAG = "Login Fragment"
 
     override fun onCreateView(
@@ -48,6 +51,10 @@ class LoginFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_login, container, false)
+        sharedPreferences = activity?.getSharedPreferences(
+            getString(R.string.preference_file_name),
+            Context.MODE_PRIVATE
+        )
         findViews(view)
 
         loginButton.setOnClickListener {
@@ -130,8 +137,10 @@ class LoginFragment : Fragment() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success")
+                            val user = firebaseAuth.currentUser
                             Toast.makeText(context, "Login Success", Toast.LENGTH_SHORT)
                                 .show()
+                            savePreference(name = user?.displayName.toString(), email = email)
                             openMain()
                             progressBar.visibility = View.GONE
                         } else {
@@ -202,6 +211,14 @@ class LoginFragment : Fragment() {
 
         openReg.paintFlags = openReg.paintFlags or Paint.UNDERLINE_TEXT_FLAG
         openForgetPass.paintFlags = openForgetPass.paintFlags or Paint.UNDERLINE_TEXT_FLAG
+    }
+
+    private fun savePreference(
+        name: String,
+        email: String,
+    ) {
+        sharedPreferences?.edit()?.putString("name", name)?.apply()
+        sharedPreferences?.edit()?.putString("email", email)?.apply()
     }
 
 }

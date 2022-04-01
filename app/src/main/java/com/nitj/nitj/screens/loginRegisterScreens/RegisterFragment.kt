@@ -2,8 +2,11 @@ package com.nitj.nitj.screens.loginRegisterScreens
 
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.graphics.Paint
+import android.net.Uri
 import android.os.Bundle
 import android.provider.Settings
 import android.util.Log
@@ -21,8 +24,11 @@ import androidx.navigation.fragment.findNavController
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.auth.ktx.userProfileChangeRequest
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 import com.nitj.nitj.R
 import com.nitj.nitj.screens.MainActivity
 import com.nitj.nitj.util.ConnectionManager
@@ -37,13 +43,14 @@ class RegisterFragment : Fragment() {
     private lateinit var openLog: TextView
     private lateinit var registerButton: MaterialButton
     private lateinit var progressBar: ProgressBar
-    private lateinit var llContent : RelativeLayout
+    private lateinit var llContent: RelativeLayout
     private lateinit var name: String
     private lateinit var email: String
     private lateinit var pass: String
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var reference: DatabaseReference
-    private val TAG = "Register Fragment"
+    private var sharedPreferences: SharedPreferences? = null
+    private var TAG = "Register Fragment"
 
 
     override fun onCreateView(
@@ -52,6 +59,10 @@ class RegisterFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_register, container, false)
+        sharedPreferences = activity?.getSharedPreferences(
+            getString(R.string.preference_file_name),
+            Context.MODE_PRIVATE
+        )
         findViews(view)
 
         registerButton.setOnClickListener {
@@ -126,7 +137,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun createUser() {
-       progressBar.visibility = View.VISIBLE
+        progressBar.visibility = View.VISIBLE
         if (ConnectionManager().checkConnectivity(requireContext())) {
 
             try {
@@ -135,7 +146,6 @@ class RegisterFragment : Fragment() {
                         if (task.isSuccessful) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "createUserWithEmail:success")
-                            val user = firebaseAuth.currentUser
                             uploadData()
                         } else {
                             // If sign in fails, display a message to the user.
@@ -154,7 +164,7 @@ class RegisterFragment : Fragment() {
                         ).show()
                         progressBar.visibility = View.GONE
                     }
-            }catch (e: Exception) {
+            } catch (e: Exception) {
                 // progressDialog.dismiss()
                 progressBar.visibility = View.GONE
                 Toast.makeText(
@@ -201,7 +211,21 @@ class RegisterFragment : Fragment() {
                     Log.e(TAG, "User Upload success")
                     Toast.makeText(context, "Registration Success", Toast.LENGTH_SHORT)
                         .show()
-                    openMain()
+                    val user = Firebase.auth.currentUser
+
+                    val profileUpdates = userProfileChangeRequest {
+                        displayName = name
+                    }
+
+                    user!!.updateProfile(profileUpdates)
+                        .addOnCompleteListener { task ->
+                            if (task.isSuccessful) {
+                                Log.d(TAG, "User profile updated.")
+                                savePreference(name = name, email = email)
+                                openMain()
+                            }
+                        }
+
                     progressBar.visibility = View.GONE
                     // progressDialog.dismiss()
 
@@ -259,5 +283,14 @@ class RegisterFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         reference = FirebaseDatabase.getInstance().reference
     }
+
+    private fun savePreference(
+        name: String,
+        email: String,
+    ) {
+        sharedPreferences?.edit()?.putString("name", name)?.apply()
+        sharedPreferences?.edit()?.putString("email", email)?.apply()
+    }
+
 
 }

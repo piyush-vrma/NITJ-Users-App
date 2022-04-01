@@ -1,10 +1,13 @@
 package com.nitj.nitj.screens
 
 import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -22,6 +25,7 @@ import com.google.firebase.messaging.FirebaseMessaging
 import com.nitj.nitj.R
 import com.nitj.nitj.firebaseNotificationJava.Constant.TOPIC
 import com.nitj.nitj.screens.loginRegisterScreens.LoginRegister
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,15 +35,18 @@ class MainActivity : AppCompatActivity() {
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var navHostFragment: NavHostFragment
     private lateinit var navController: NavController
-    private lateinit var actionBarDrawerToggle: ActionBarDrawerToggle
     private lateinit var navigationView: NavigationView
     val REQUEST_CODE = 1
     private lateinit var firebaseAuth: FirebaseAuth
+    private var sharedPreferences: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        sharedPreferences = getSharedPreferences(
+            getString(R.string.preference_file_name),
+            Context.MODE_PRIVATE
+        )
 
         ActivityCompat.requestPermissions(
             this, arrayOf(
@@ -53,8 +60,27 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+        getHeaderValues()
+
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
 
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun getHeaderValues() {
+        val headerView = navigationView.getHeaderView(0)
+        val cardText: TextView = headerView.findViewById(R.id.cardText) as TextView
+        val headerName: TextView = headerView.findViewById(R.id.headerName) as TextView
+        val headerEmail: TextView = headerView.findViewById(R.id.headerEmail) as TextView
+        val name = sharedPreferences?.getString("name", "Piyush Verma")?.toUpperCase(Locale.ROOT)
+        headerName.text = name
+        headerEmail.text = sharedPreferences?.getString("email", "piyush@gmail.com")?.toLowerCase(Locale.ROOT)
+        val strs = name?.split(" ")?.toTypedArray()
+        if(strs?.size!! >1){
+            cardText.text = "${strs[0].substring(0,1).uppercase(Locale.getDefault())}${strs[1].substring(0,1).uppercase(Locale.getDefault())}"
+        }else{
+            cardText.text = strs[0].substring(0,1).uppercase(Locale.getDefault())
+        }
     }
 
     private fun logOut() {
@@ -74,10 +100,8 @@ class MainActivity : AppCompatActivity() {
                 navigationView.menu.getItem(0).isChecked = true
             } else if (currentFragment == R.id.gallery_dest) {
                 navigationView.menu.getItem(4).isChecked = true
-            } else if (currentFragment == R.id.profile_dest) {
-                navigationView.menu.getItem(5).isChecked = true
             } else if (currentFragment == R.id.about_dest) {
-                navigationView.menu.getItem(6).isChecked = true
+                navigationView.menu.getItem(5).isChecked = true
             }
         }
         dialog.create()
@@ -116,7 +140,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.department_dest,
                 R.id.gallery_dest,
                 R.id.ebook_dest,
-                R.id.profile_dest,
                 R.id.about_dest,
                 R.id.logOut
             ),

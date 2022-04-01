@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.nitj.nitj.R
+import com.nitj.nitj.screens.MainActivity
 
 
 class WebViewFragment : Fragment() {
@@ -26,9 +27,20 @@ class WebViewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_web_view, container, false)
+        (activity as MainActivity).setDrawerEnabled(enabled = false)
         findView(view)
         startWebView(url)
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as MainActivity).setDrawerEnabled(enabled = false)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        (activity as MainActivity).setDrawerEnabled(enabled = true)
     }
 
     @SuppressLint("SetJavaScriptEnabled")
