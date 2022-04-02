@@ -16,6 +16,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.isVisible
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.nitj.nitj.R
 import com.nitj.nitj.screens.MainActivity
@@ -39,6 +40,8 @@ class FacFullDetailFragment : Fragment() {
     private lateinit var researchContent: TextView
     private lateinit var faxHeader: TextView
     private lateinit var fax: TextView
+    lateinit var title: String
+    lateinit var url: String
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,6 +51,13 @@ class FacFullDetailFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_fac_full_detail, container, false)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         findView(view)
+        facImage.setOnClickListener {
+            val action = FacFullDetailFragmentDirections.actionFacFullDetailDestToFullImageViewFragment(
+                title,
+                url
+            )
+            findNavController().navigate(action)
+        }
         return view
     }
 
@@ -68,11 +78,13 @@ class FacFullDetailFragment : Fragment() {
     private fun getValues() {
         val safeArgs: FacFullDetailFragmentArgs by navArgs()
         val profilePic = safeArgs.facImage
+        url = profilePic
         try {
             Picasso.get().load(profilePic).error(R.drawable.logo).into(facImage)
         } catch (e: Exception) {
             Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show()
         }
+        title = safeArgs.facName
         facName.text = safeArgs.facName
         facDesignation.text = safeArgs.designation
         departmentName.text = safeArgs.department

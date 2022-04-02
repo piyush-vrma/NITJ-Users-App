@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="Piyush"
                 android:textColor="@color/black"
-                android:textSize="17sp" />
+                android:textSize="15.5sp" />
 
             <TextView
                 android:id="@+id/txtDesignation"
@@ -59,7 +59,7 @@
                 android:layout_marginTop="4dp"
                 android:text="HOD"
                 android:textColor="@color/teal_700"
-                android:textSize="15sp" />
+                android:textSize="14.5sp" />
 
             <TextView
                 android:id="@+id/txtFacultyEmailId"

@@ -2,16 +2,20 @@ package com.nitj.nitj.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import com.bumptech.glide.Glide;
 import com.nitj.nitj.R;
 import com.nitj.nitj.models.SliderItem;
+import com.nitj.nitj.screens.fragments.FullImageViewFragment;
 import com.smarteist.autoimageslider.SliderViewAdapter;
 
 import java.util.ArrayList;
@@ -69,7 +73,15 @@ public class SliderAdapter extends
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "This is item in position " + position, Toast.LENGTH_SHORT).show();
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment myFragment = new FullImageViewFragment();
+                String title = sliderItem.getDescription();
+                String url = sliderItem.getImageUrl();
+                Bundle args = new Bundle();
+                args.putString("title",title);
+                args.putString("url",url);
+                myFragment.setArguments(args);
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.my_nav_host_fragment, myFragment).addToBackStack(null).commit();
             }
         });
     }

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#f1f1f1"
     android:orientation="vertical"
     tools:context=".screens.fragments.GalleryFragment">
 
@@ -25,7 +26,7 @@
             android:gravity="center"
             android:text="No Gallery Data"
             android:textColor="@color/textColor"
-            android:textSize="40sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView

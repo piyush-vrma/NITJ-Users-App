@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/ebook_rounded_layout"
         android:elevation="5dp"
         android:orientation="vertical">
@@ -46,6 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="22dp"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginRight="22dp"
             android:background="@drawable/search_view_background"
             android:baselineAligned="false"
@@ -64,7 +65,7 @@
             android:maxLines="2"
             android:text="Please Select the department to see the available EBooks"
             android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:textSize="13sp" />
 
     </LinearLayout>
 
@@ -92,7 +93,7 @@
                 android:padding="30dp"
                 android:text="No Ebook found"
                 android:textColor="@color/textColor"
-                android:textSize="40sp" />
+                android:textSize="15sp" />
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView

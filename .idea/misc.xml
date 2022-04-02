@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable-v24/custom_add_category_icon.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1245" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/app_logo_background.xml" value="0.1245" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/background_round_padded.xml" value="0.18" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/bg_overlay.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/circular_border_layout_design.xml" value="0.1615" />
@@ -26,6 +28,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/ic_research.xml" value="0.1275" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/ic_share.xml" value="0.11" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/menu_background_color_state.xml" value="0.1" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/my_drawable.xml" value="0.1825" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/notice_rounded_tile.xml" value="0.155" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/outline_fax.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/drawable/outline_science.xml" value="0.1275" />
@@ -39,6 +42,7 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_fac_full_detail.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_faculty.xml" value="0.1" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_forget_password.xml" value="0.22" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_full_image_view.xml" value="0.20208333333333334" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_gallery.xml" value="0.20260416666666667" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/NITJ/app/src/main/res/layout/fragment_login.xml" value="0.22" />

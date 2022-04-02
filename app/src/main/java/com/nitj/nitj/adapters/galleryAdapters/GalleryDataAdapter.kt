@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.nitj.nitj.R
 import com.nitj.nitj.models.gallery.GalleryData
+import com.nitj.nitj.screens.fragments.GalleryFragmentDirections
+import com.nitj.nitj.screens.fragments.HomeFragmentDirections
 import com.squareup.picasso.Picasso
 
 class GalleryDataAdapter(
@@ -33,6 +36,10 @@ class GalleryDataAdapter(
                 .into(holder.eventImage)
         } catch (e: Exception) {
             Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show()
+        }
+        holder.eventImage.setOnClickListener {
+            val action = GalleryFragmentDirections.actionGalleryDestToFullImageViewFragment("Gallery",galleryData.imageUrl)
+            it.findNavController().navigate(action)
         }
     }
 

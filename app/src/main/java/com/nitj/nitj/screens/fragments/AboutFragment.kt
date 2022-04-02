@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.nitj.nitj.R
 
@@ -19,6 +20,7 @@ class AboutFragment : Fragment() {
     private lateinit var nitjRanking: CardView
     private lateinit var nitjWebsite: CardView
     private lateinit var nitjLocation: CardView
+    private lateinit var nitjImage: CardView
     private lateinit var piyushLinkedInButton: Button
     private lateinit var piyushGitHubButton: Button
     private lateinit var mayankLinkedInButton: Button
@@ -126,6 +128,10 @@ class AboutFragment : Fragment() {
             }
         }
 
+        nitjImage.setOnClickListener {
+            val action = AboutFragmentDirections.actionAboutDestToFullImageViewFragment("NIT Jalandhar","R.drawable.nitj_about")
+            findNavController().navigate(action)
+        }
 
         return view
     }
@@ -134,6 +140,7 @@ class AboutFragment : Fragment() {
         nitjRanking = view.findViewById(R.id.nitjRanking)
         nitjWebsite = view.findViewById(R.id.nitjWebsite)
         nitjLocation = view.findViewById(R.id.nitjLocation)
+        nitjImage = view.findViewById(R.id.nitjImage)
         piyushLinkedInButton = view.findViewById(R.id.piyushLinkedInButton)
         piyushGitHubButton = view.findViewById(R.id.piyushGitHubButton)
         mayankLinkedInButton = view.findViewById(R.id.mayankLinkedInButton)

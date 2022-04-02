@@ -7,9 +7,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.nitj.nitj.R
 import com.nitj.nitj.models.NoticeData
+import com.nitj.nitj.screens.fragments.HomeFragmentDirections
+import com.nitj.nitj.screens.fragments.NoticeFragmentDirections
 import com.squareup.picasso.Picasso
 
 class NoticeAdapter(
@@ -34,6 +37,11 @@ class NoticeAdapter(
         holder.noticeDate.text = "Date : ${noticeData.date}"
         holder.noticeTime.text = "Time : ${noticeData.time}"
         holder.noticeTitle.text = noticeData.title
+
+        holder.noticeImage.setOnClickListener {
+            val action = NoticeFragmentDirections.actionNoticeDestToFullImageViewFragment(noticeData.title,noticeData.image)
+            it.findNavController().navigate(action)
+        }
     }
 
     override fun getItemCount(): Int {

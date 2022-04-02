@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.nitj.nitj.R
 import com.nitj.nitj.models.FacultyData
 import com.nitj.nitj.screens.fragments.FacultyFragmentDirections
+import com.nitj.nitj.screens.fragments.HomeFragmentDirections
 import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -49,6 +50,10 @@ class FacultyAdapter(
             Toast.makeText(context, e.toString(), Toast.LENGTH_LONG).show()
         }
 
+        holder.imgFacultyProfileImage.setOnClickListener {
+            val action = FacultyFragmentDirections.actionFacultyDestToFullImageViewFragment(facultyData.name,facultyData.profileImage)
+            it.findNavController().navigate(action)
+        }
 
         holder.facultyTile.setOnClickListener {
 

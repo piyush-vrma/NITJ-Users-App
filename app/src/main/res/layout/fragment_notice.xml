@@ -56,7 +56,7 @@
             android:padding="20dp"
             android:text="No Notice Data"
             android:textColor="@color/textColor"
-            android:textSize="40sp" />
+            android:textSize="15sp" />
     </androidx.cardview.widget.CardView>
 
     <ProgressBar

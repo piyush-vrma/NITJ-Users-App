@@ -60,7 +60,7 @@
                     android:fontFamily="@font/lato_bold"
                     android:text="Please come back to college as soon as possible"
                     android:textColor="@color/nitJ_primaryDark"
-                    android:textSize="16sp" />
+                    android:textSize="15sp" />
 
 
             </LinearLayout>
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:text="Date : 07/03/2022"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
             <TextView
                 android:id="@+id/noticeTime"
@@ -88,7 +88,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:text="Time : 1:47 am"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
         </LinearLayout>
 
     </LinearLayout>

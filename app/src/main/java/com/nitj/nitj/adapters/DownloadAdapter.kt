@@ -46,14 +46,11 @@ class DownloadAdapter(
                     val i = Intent(Intent.ACTION_VIEW, Uri.parse(downloadData.url))
                     context.startActivity(i)
                 }
-            } else {
-                Toast.makeText(context, downloadData.url, Toast.LENGTH_LONG).show()
-                val action = HomeFragmentDirections.actionHomeDestToWebViewFragment(
-                    downloadData.title,
-                    downloadData.url
-                )
-                it.findNavController().navigate(action)
-            }
+            }  else{
+            Toast.makeText(context, downloadData.url, Toast.LENGTH_LONG).show()
+            val action = HomeFragmentDirections.actionHomeDestToWebViewFragment(downloadData.title,downloadData.url)
+            it.findNavController().navigate(action)
+        }
 
         }
 

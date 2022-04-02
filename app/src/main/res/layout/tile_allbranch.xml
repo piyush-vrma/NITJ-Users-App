@@ -45,21 +45,25 @@
             android:orientation="vertical">
 
             <TextView
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:id="@+id/txtDepartmentName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Electronics and Comm Engineering"
                 android:textColor="@color/black"
-                android:textSize="17sp" />
+                android:textSize="14.5sp" />
 
             <TextView
+                android:maxLines="2"
+                android:ellipsize="end"
                 android:id="@+id/txtNoOfFaculty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:text="Total Faculty : 5"
                 android:textColor="@color/teal_700"
-                android:textSize="15sp" />
+                android:textSize="13.5sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -73,16 +77,18 @@
                     android:layout_marginTop="4dp"
                     android:text="HOD"
                     android:textColor="@color/purple_700"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
 
                 <TextView
+                    android:maxLines="2"
+                    android:ellipsize="end"
                     android:id="@+id/hodMail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="piyush09990@gmail.com"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -97,16 +103,18 @@
                     android:layout_marginTop="4dp"
                     android:text="Office"
                     android:textColor="@color/purple_700"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
 
                 <TextView
+                    android:maxLines="2"
+                    android:ellipsize="end"
                     android:id="@+id/officeMail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="piyush09990@gmail.com"
                     android:textColor="@color/colorPrimary"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
         </LinearLayout>

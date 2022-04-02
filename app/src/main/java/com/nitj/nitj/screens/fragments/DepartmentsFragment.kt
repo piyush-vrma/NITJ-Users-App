@@ -58,7 +58,6 @@ class DepartmentsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_departments, container, false)
-        (activity as MainActivity).setDrawerEnabled(enabled = false)
         (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
 
         activity?.onBackPressedDispatcher?.addCallback(requireActivity(), object : OnBackPressedCallback(true) {

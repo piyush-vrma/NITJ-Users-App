@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
     private var sharedPreferences: SharedPreferences? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_NITJ)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         sharedPreferences = getSharedPreferences(

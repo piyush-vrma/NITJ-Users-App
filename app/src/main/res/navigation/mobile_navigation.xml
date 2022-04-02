@@ -17,13 +17,28 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_dest_to_fullImageViewFragment"
+            app:destination="@id/fullImageViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/notice_dest"
         android:name="com.nitj.nitj.screens.fragments.NoticeFragment"
         android:label="Notice"
-        tools:layout="@layout/fragment_notice" />
+        tools:layout="@layout/fragment_notice">
+        <action
+            android:id="@+id/action_notice_dest_to_fullImageViewFragment"
+            app:destination="@id/fullImageViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/faculty_dest"
@@ -37,6 +52,13 @@
         <action
             android:id="@+id/action_faculty_dest_to_fac_full_detail_dest"
             app:destination="@id/fac_full_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_faculty_dest_to_fullImageViewFragment"
+            app:destination="@id/fullImageViewFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -88,6 +110,13 @@
             android:name="facImage"
             android:defaultValue="HOD"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fac_full_detail_dest_to_fullImageViewFragment"
+            app:destination="@id/fullImageViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
     </fragment>
 
@@ -95,7 +124,15 @@
         android:id="@+id/gallery_dest"
         android:name="com.nitj.nitj.screens.fragments.GalleryFragment"
         android:label="Gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_gallery">
+        <action
+            android:id="@+id/action_gallery_dest_to_fullImageViewFragment"
+            app:destination="@id/fullImageViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
 
     <fragment
         android:id="@+id/about_dest"
@@ -105,6 +142,13 @@
         <action
             android:id="@+id/action_about_dest_to_webViewFragment"
             app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_about_dest_to_fullImageViewFragment"
+            app:destination="@id/fullImageViewFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -168,5 +212,21 @@
             android:defaultValue="https://www.nitj.ac.in/"
             app:argType="string" />
     </fragment>
+
+    <fragment
+        android:id="@+id/fullImageViewFragment"
+        android:name="com.nitj.nitj.screens.fragments.FullImageViewFragment"
+        android:label="PhotoView: {title}"
+        tools:layout="@layout/fragment_full_image_view">
+        <argument
+            android:name="title"
+            android:defaultValue="PhotoView"
+            app:argType="string" />
+        <argument
+            android:name="url"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+
 
 </navigation>
