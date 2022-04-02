@@ -1,6 +1,9 @@
 package com.nitj.nitj.adapters
 
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,9 +32,28 @@ class OtherAdapter(
 
         holder.title.text = otherData.title
         holder.containerView.setOnClickListener {
-            Toast.makeText(context, otherData.url, Toast.LENGTH_LONG).show()
-            val action = HomeFragmentDirections.actionHomeDestToWebViewFragment(otherData.title,otherData.url)
-            it.findNavController().navigate(action)
+            if (otherData.url.contains(".docx") || otherData.url.contains(".pptx")) {
+                try {
+                    val uri = Uri.parse("googlechrome://navigate?url=${otherData.url}")
+                    val i = Intent(Intent.ACTION_VIEW, uri)
+                    if (i.resolveActivity(context.packageManager) == null) {
+                        i.data = Uri.parse(otherData.url)
+                    }
+                    context.startActivity(i)
+                } catch (e: ActivityNotFoundException) {
+                    // Chrome is not installed
+                    val i = Intent(Intent.ACTION_VIEW, Uri.parse(otherData.url))
+                    context.startActivity(i)
+                }
+            } else {
+                Toast.makeText(context, otherData.url, Toast.LENGTH_LONG).show()
+                val action = HomeFragmentDirections.actionHomeDestToWebViewFragment(
+                    otherData.title,
+                    otherData.url
+                )
+                it.findNavController().navigate(action)
+            }
+
         }
 
     }

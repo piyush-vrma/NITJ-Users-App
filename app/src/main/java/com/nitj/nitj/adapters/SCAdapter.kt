@@ -1,6 +1,9 @@
 package com.nitj.nitj.adapters
 
+import android.content.ActivityNotFoundException
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +14,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.nitj.nitj.R
 import com.nitj.nitj.models.HomeRecyclerModel
-import com.nitj.nitj.screens.fragments.DepartmentsFragmentDirections
 import com.nitj.nitj.screens.fragments.HomeFragmentDirections
+
 
 class SCAdapter(
     private val context: Context,
@@ -31,8 +34,24 @@ class SCAdapter(
         holder.title.text = scData.title
         holder.containerView.setOnClickListener {
             Toast.makeText(context, scData.url, Toast.LENGTH_LONG).show()
-            val action = HomeFragmentDirections.actionHomeDestToWebViewFragment(scData.title,scData.url)
-            it.findNavController().navigate(action)
+            if (scData.url.contains(".docx") || scData.url.contains(".pptx")) {
+                try {
+                    val uri = Uri.parse("googlechrome://navigate?url=${scData.url}")
+                    val i = Intent(Intent.ACTION_VIEW, uri)
+                    if (i.resolveActivity(context.packageManager) == null) {
+                        i.data = Uri.parse(scData.url)
+                    }
+                    context.startActivity(i)
+                } catch (e: ActivityNotFoundException) {
+                    // Chrome is not installed
+                    val i = Intent(Intent.ACTION_VIEW, Uri.parse(scData.url))
+                    context.startActivity(i)
+                }
+            } else {
+                val action =
+                    HomeFragmentDirections.actionHomeDestToWebViewFragment(scData.title, scData.url)
+                it.findNavController().navigate(action)
+            }
         }
 
     }

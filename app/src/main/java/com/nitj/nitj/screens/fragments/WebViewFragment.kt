@@ -78,6 +78,7 @@ class WebViewFragment : Fragment() {
                     .show()
             }
         }
+
         if (url.contains(".pdf")) {
             webView.loadUrl("https://drive.google.com/viewerng/viewer?embedded=true&url=$url")
         } else {

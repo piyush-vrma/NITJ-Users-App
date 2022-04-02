@@ -99,7 +99,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="Compendium"
                         android:textColor="@color/nitJ_primary"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -108,7 +108,7 @@
                         android:fontFamily="@font/lato_regular"
                         android:text=" A Memoir to the Journey of 35 Years of NITJ"
                         android:textColor="@color/red"
-                        android:textSize="12sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -134,7 +134,7 @@
                         android:fontFamily="@font/lato_bold"
                         android:text="Vision"
                         android:textColor="@color/nitJ_primary"
-                        android:textSize="16sp" />
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -143,7 +143,7 @@
                         android:fontFamily="@font/lato_regular"
                         android:text="To build a rich intellectual potential embedded with inter-disciplinary knowledge, human values and professional ethics among the youth, aspirant of becoming engineers and technologists, so that they contribute to society and create a niche for a successful career."
                         android:textColor="@color/nitJ_cardViewColor"
-                        android:textSize="12sp" />
+                        android:textSize="13sp" />
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
